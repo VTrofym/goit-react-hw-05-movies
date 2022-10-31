@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { trendingMovies } from 'helpers/filmApi';
+import { getTrending } from 'helpers/filmApi';
 import { Link } from 'react-router-dom';
 
 export default function MovieList() {
@@ -8,7 +8,7 @@ export default function MovieList() {
   useEffect(() => {
     const getData = async () => {
       try {
-        const response = await trendingMovies();
+        const response = await getTrending();
         // console.log('response.results', response.results);
         setMovieItems(response.results);
       } catch (error) {

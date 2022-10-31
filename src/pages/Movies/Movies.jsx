@@ -1,7 +1,8 @@
 import Form from 'components/Form/Form';
-import { moviesSearch } from 'helpers/filmApi';
+import { getTrending } from 'helpers/filmApi';
 import { useEffect } from 'react';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 export const Movies = () => {
   const [selectedFilm, setSelectedFilm] = useState('');
@@ -11,7 +12,7 @@ export const Movies = () => {
     if (!selectedFilm) return;
     const getData = async () => {
       try {
-        const response = await moviesSearch();
+        const response = await getTrending();
         console.log('response', response.results);
         setMovies(response.results);
       } catch (error) {
@@ -28,6 +29,15 @@ export const Movies = () => {
   return (
     <>
       <Form getDataFilm={getDataFilm} />
+      {movies && (
+        <ul>
+          {movies?.map(movie => (
+            <li key={movie.id}>
+              <Link to={`/movies/${movie.id}`}>{movie.original_title}</Link>
+            </li>
+          ))}
+        </ul>
+      )}
     </>
   );
 };
