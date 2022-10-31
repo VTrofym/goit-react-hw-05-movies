@@ -12,3 +12,9 @@ export const trendingMovies = () => {
   return getFilmApi(`${BASE_URL}/trending/movie/day?api_key=${KEY_API}`);
 }
 
+export function moviesSearch(searchName, page) {
+  return getFilmApi(
+    `${BASE_URL}/search/movie?api_key=${KEY_API}&page=${page}&query=${searchName}&language=en-US&include_adult=false`
+  );
+}
+
