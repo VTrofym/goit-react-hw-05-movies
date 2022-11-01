@@ -1,0 +1,16 @@
+.sectionHome {
+  padding-bottom: 20px;
+  padding-top: 20px;
+}
+
+.containerHome {
+  margin-right: 0 auto;
+  padding-left: 15px;
+  padding-right: 15px;
+  max-width: 1280px;
+}
+
+.castRewiew {
+  display: flex;
+  gap: 15px;
+}

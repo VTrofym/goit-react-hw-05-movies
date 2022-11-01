@@ -5,7 +5,7 @@ import css from './Header.module.css';
 function Header(props) {
   return (
     <header className={css.header}>
-      <nav>
+      <nav className={css.nav}>
         <ul className={css.items}>
           <li>
             <NavLink className={css.navLink} to="/" end>
