@@ -9,7 +9,6 @@ export default function MovieList() {
     const getData = async () => {
       try {
         const response = await getTrending();
-        console.log('response.results', response.results);
         setMovieItems(response.results);
       } catch (error) {
         console.log('error.message', error.message);

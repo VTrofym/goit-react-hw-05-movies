@@ -4,7 +4,7 @@ import css from './Header.module.css';
 
 function Header(props) {
   return (
-    <header>
+    <header className={css.header}>
       <nav>
         <ul className={css.items}>
           <li>

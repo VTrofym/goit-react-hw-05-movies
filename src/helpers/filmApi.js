@@ -16,4 +16,18 @@ export const getMovieByName = async query => {
   return data;
 };
 
-//  https://api.themoviedb.org/3/search/movie?api_key={api_key}&query=Jack+Reacher
+export const getMovieById = async query => {
+  const { data } = await axios.get(`/movie/${query}`, {
+    params: { api_key: API_KEY, query },
+  });
+  return data;
+};
+//  /movie/{movie_id}
+
+export const getCast = async query => {
+  const { data } = await axios.get(`/movie/${query}/credits`, {
+    params: { api_key: API_KEY, query },
+  });
+  return data;
+};
+//   /movie/{movie_id}/credits
