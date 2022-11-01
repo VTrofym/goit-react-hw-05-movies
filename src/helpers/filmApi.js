@@ -15,3 +15,5 @@ export const getMovieByName = async query => {
   });
   return data;
 };
+
+//  https://api.themoviedb.org/3/search/movie?api_key={api_key}&query=Jack+Reacher
