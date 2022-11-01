@@ -23,10 +23,7 @@ export default function MovieList() {
         <ul>
           {movieItems.map(item => (
             <li key={item.id}>
-              <Link to={`/movies/${item.id}`}>
-                {/* {item.poster_path} */}
-                {item.original_title}
-              </Link>
+              <Link to={`/movies/${item.id}`}>{item.original_title}</Link>
             </li>
           ))}
         </ul>

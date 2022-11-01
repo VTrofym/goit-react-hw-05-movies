@@ -31,3 +31,11 @@ export const getCast = async query => {
   return data;
 };
 //   /movie/{movie_id}/credits
+
+export const getReviews = async query => {
+  const { data } = await axios.get(`/movie/${query}/credits`, {
+    params: { api_key: API_KEY, query },
+  });
+  return data;
+};
+//   /movie/{movie_id}/credits

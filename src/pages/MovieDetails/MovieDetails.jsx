@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { useEffect } from 'react';
 import { getMovieById } from 'helpers/filmApi';
-import { useParams } from 'react-router-dom';
+import { Link, Outlet, useParams } from 'react-router-dom';
 import { createImageString } from 'helpers/helpers';
 
 export default function MovieDetails() {
@@ -31,6 +31,9 @@ export default function MovieDetails() {
       <p>{nameFilm.overview}</p>
       <h4>Genres</h4>
       <p>{nameFilm?.genres?.map(item => item.name).join(' ')}</p>
+      <Link to="cast">Cast</Link>
+      <Link to="reviews">Reviews</Link>
+      <Outlet />
     </>
   );
 }
