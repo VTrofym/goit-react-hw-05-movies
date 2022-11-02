@@ -6,6 +6,7 @@ import { getMovieById } from 'helpers/filmApi';
 import { Link, Outlet, useParams } from 'react-router-dom';
 import { createImageString } from 'helpers/helpers';
 import css from './MovieDetails.module.css';
+import Button from 'components/Button';
 
 export default function MovieDetails() {
   const [nameFilm, setNameFilm] = useState({});
@@ -15,7 +16,6 @@ export default function MovieDetails() {
   useEffect(() => {
     const getNameFilm = async () => {
       const nameFilmData = await getMovieById(movieId);
-      console.log('nameFilmData', nameFilmData);
       setNameFilm(nameFilmData);
     };
     getNameFilm();
@@ -25,6 +25,8 @@ export default function MovieDetails() {
     <>
       <section className={css.sectionHome}>
         <div className={css.containerHome}>
+          <Button />
+          {/* <button>Go back</button> */}
           {/* <Link to={location.state?.from ?? '/'}>Go back</Link> */}
           <img
             src={createImageString(nameFilm.poster_path)}

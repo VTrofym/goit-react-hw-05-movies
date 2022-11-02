@@ -8,12 +8,23 @@ function Header(props) {
       <nav className={css.nav}>
         <ul className={css.items}>
           <li>
-            <NavLink className={css.navLink} to="/" end>
+            <NavLink
+              className={({ isActive }) =>
+                isActive ? css.navLink : !css.deActive
+              }
+              to="/"
+              end
+            >
               Home
             </NavLink>
           </li>
           <li>
-            <NavLink className={css.navLink} to="/movies">
+            <NavLink
+              className={({ isActive }) =>
+                isActive ? css.navLink : !css.deActive
+              }
+              to="/movies"
+            >
               Movies
             </NavLink>
           </li>
@@ -24,3 +35,7 @@ function Header(props) {
 }
 
 export default Header;
+
+// {
+//   ({ isActive }) => (isActive ? activeClassName : undefined);
+// }
