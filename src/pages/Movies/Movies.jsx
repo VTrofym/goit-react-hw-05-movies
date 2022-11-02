@@ -13,6 +13,7 @@ export const Movies = () => {
   useEffect(() => {
     const getData = async (query, page = 1) => {
       const data = await getMovieByName(query, page);
+      console.log(data.results);
       setMovies(data.results);
     };
     if (page > 1 && query) {

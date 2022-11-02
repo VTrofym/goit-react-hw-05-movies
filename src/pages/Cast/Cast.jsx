@@ -5,6 +5,7 @@ import React from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import { useParams } from 'react-router-dom';
+import css from './Cast.module.css';
 
 export default function Cast() {
   const [cast, setCast] = useState(null);
@@ -22,12 +23,16 @@ export default function Cast() {
     <>
       <h2>Cast</h2>
       {cast && (
-        <ul>
+        <ul className={css.items}>
           {cast?.map(item => (
-            <li key={item.id}>
-              <img src={createImageString(item.profile_path)} alt="actor" />
-              <p>Name: {item.original_name}</p>
-              <p>Character: {item.character}</p>
+            <li className={css.item} key={item.id}>
+              <img
+                className={css.foto}
+                src={createImageString(item.profile_path)}
+                alt="actor"
+              />
+              <p className={css.name}>Name: {item.original_name}</p>
+              <p className={css.character}>Character: {item.character}</p>
             </li>
           ))}
         </ul>

@@ -2,7 +2,7 @@ import { NavLink } from 'react-router-dom';
 // import PropTypes from 'prop-types'
 import css from './Header.module.css';
 
-function Header(props) {
+function Header() {
   return (
     <header className={css.header}>
       <nav className={css.nav}>
@@ -10,7 +10,7 @@ function Header(props) {
           <li>
             <NavLink
               className={({ isActive }) =>
-                isActive ? css.navLink : !css.deActive
+                isActive ? css.navLink : css.deActive
               }
               to="/"
               end
@@ -21,7 +21,7 @@ function Header(props) {
           <li>
             <NavLink
               className={({ isActive }) =>
-                isActive ? css.navLink : !css.deActive
+                isActive ? css.navLink : css.deActive
               }
               to="/movies"
             >

@@ -29,18 +29,25 @@ export default function MovieDetails() {
           {/* <button>Go back</button> */}
           {/* <Link to={location.state?.from ?? '/'}>Go back</Link> */}
           <img
+            className={css.foto}
             src={createImageString(nameFilm.poster_path)}
             // src={`https://image.tmdb.org/t/p/w500${nameFilm.poster_path}`}
             alt=""
           />
-          <h2>{nameFilm.original_title}</h2>
+          <h2 className={css.title}>{nameFilm.original_title}</h2>
           <h3>Overview</h3>
-          <p>{nameFilm.overview}</p>
-          <h4>Genres</h4>
-          <p>{nameFilm?.genres?.map(item => item.name).join(' ')}</p>
+          <p className={css.overview}>{nameFilm.overview}</p>
+          <h4 className={css.genres}>Genres</h4>
+          <p className={css.gengerItems}>
+            {nameFilm?.genres?.map(item => item.name).join(' ')}
+          </p>
           <div className={css.castRewiew}>
-            <Link to="cast">Cast</Link>
-            <Link to="reviews">Reviews</Link>
+            <Link className={css.cast} to="cast">
+              Cast
+            </Link>
+            <Link className={css.reviews} to="reviews">
+              Reviews
+            </Link>
           </div>
           <Suspense fallback={<p>Loading...</p>}>
             <Outlet />

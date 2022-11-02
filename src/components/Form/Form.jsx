@@ -1,4 +1,6 @@
+import PropTypes from 'prop-types';
 import React, { useState } from 'react';
+// import css from './Form.module.css';
 
 export default function Form({ getDataFilm }) {
   const [submitFilm, setSubmitFilm] = useState('');
@@ -22,3 +24,7 @@ export default function Form({ getDataFilm }) {
     </div>
   );
 }
+
+Form.propTypes = {
+  getDataFilm: PropTypes.func.isRequired,
+};

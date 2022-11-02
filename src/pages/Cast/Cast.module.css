@@ -1,0 +1,22 @@
+.items{
+    display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 25px;
+}
+
+/* .item{
+
+} */
+
+.foto{
+  width: 200px;
+}
+
+.name{
+  width: 200px;
+}
+
+.character{
+  width: 200px;
+}

@@ -1,10 +1,10 @@
-import { useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import css from './Button.module.css';
 
 export const Button = () => {
-  const goBackOnClick = () => {};
+  // const goBackOnClick = () => {};
 
-  const location = useLocation();
+  const navigate = useNavigate();
 
   // useEffect(() => {
   //   Analytics.send(location);
@@ -12,7 +12,7 @@ export const Button = () => {
 
   return (
     <>
-      <button onClick={goBackOnClick} type="button">
+      <button className={css.button} onClick={() => navigate(-1)} type="button">
         Go back
       </button>
     </>

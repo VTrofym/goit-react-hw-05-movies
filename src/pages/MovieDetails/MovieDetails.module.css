@@ -10,7 +10,29 @@
   max-width: 1280px;
 }
 
+.foto{
+  width: 300px;
+  margin: 0 auto;
+}
+
+.title{
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.overview{
+  margin-top: 10px;
+}
+
+.genres{
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
 .castRewiew {
   display: flex;
   gap: 15px;
+  margin-top: 40px;
+  margin-bottom: 40px;
 }
+

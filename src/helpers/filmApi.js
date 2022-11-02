@@ -33,9 +33,9 @@ export const getCast = async query => {
 //   /movie/{movie_id}/credits
 
 export const getReviews = async query => {
-  const { data } = await axios.get(`/movie/${query}/credits`, {
+  const { data } = await axios.get(`/movie/${query}/reviews`, {
     params: { api_key: API_KEY, query },
   });
   return data;
 };
-//   /movie/{movie_id}/credits
+//   /movie/{movie_id}/reviews

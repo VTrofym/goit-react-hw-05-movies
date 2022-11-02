@@ -3,6 +3,7 @@ import React from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import { useParams } from 'react-router-dom';
+import css from './Reviews.module.css';
 
 export default function Reviews() {
   const [reviews, setReviews] = useState();
@@ -21,7 +22,7 @@ export default function Reviews() {
     <>
       <h2>Reviews</h2>
       {reviews?.map(item => (
-        <li key={item.id}>
+        <li className={css.item} key={item.id}>
           <p>Author: {item.author}</p>
           <p>Content: {item.content}</p>
         </li>
