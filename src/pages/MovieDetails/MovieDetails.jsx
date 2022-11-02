@@ -25,6 +25,7 @@ export default function MovieDetails() {
     <>
       <section className={css.sectionHome}>
         <div className={css.containerHome}>
+          {/* <Link to={location.state?.from ?? '/'}>Go back</Link> */}
           <img
             src={createImageString(nameFilm.poster_path)}
             // src={`https://image.tmdb.org/t/p/w500${nameFilm.poster_path}`}

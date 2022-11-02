@@ -12,7 +12,6 @@ export default function MovieList() {
       try {
         const response = await getTrending();
         setMovieItems(response.results);
-        console.log('response.result :>> ', response.result);
       } catch (error) {
         console.log('error.message', error.message);
       }
