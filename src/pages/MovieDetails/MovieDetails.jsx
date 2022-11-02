@@ -1,5 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState } from 'react';
+import { Suspense } from 'react';
 import { useEffect } from 'react';
 import { getMovieById } from 'helpers/filmApi';
 import { Link, Outlet, useParams } from 'react-router-dom';
@@ -38,7 +39,9 @@ export default function MovieDetails() {
             <Link to="cast">Cast</Link>
             <Link to="reviews">Reviews</Link>
           </div>
-          <Outlet />
+          <Suspense fallback={<p>Loading...</p>}>
+            <Outlet />
+          </Suspense>
         </div>
       </section>
     </>
